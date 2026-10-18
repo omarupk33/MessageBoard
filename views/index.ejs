@@ -6,6 +6,7 @@
 </head>
 
 <body>
+    <a href="/new">New Form</a>
     <h1>
         Hello World
     </h1>
@@ -14,12 +15,12 @@
 
         <% messages.map((message)=>{ %>
             <li>
-                    <h4> <%= message.added %> </h4>
                 <div>
                     <h2> <%= message.user %> </h2>
                     <h1> <%= message.text %> </h1>
-
                 </div>
+                <% const path = `/details/${message.user}` %>
+                <a href=<%=path %> >Message Details</a>
             </li>
             <% }) %>
     </ul>

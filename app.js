@@ -1,6 +1,6 @@
 const indexRoute = require('./routes/index')
 const newRoute = require('./routes/new')
-
+const detailRoute = require('./routes/message_detail')
 
 const express = require('express')
 const path = require('node:path')
@@ -21,6 +21,9 @@ app.use("/", indexRoute);
 // New route
 app.use("/new", newRoute);
 
+// Details
+
+app.use('/details', detailRoute)
 
 // Listening 
 app.listen(3000, (err)=>{

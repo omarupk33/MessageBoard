@@ -1,5 +1,6 @@
 const  express = require("express");
 const newRoute = express.Router()
+const {messages} = require('../db')
 
 
 
@@ -13,7 +14,9 @@ newRoute.post("/",(req,res)=> {
   const body = req.body
   const user = body.name
   const message = body.message
-  res.send(`${user} sent this message: ${message}`)
+  messages.push({ text: user, user: message, added: new Date() });
+
+  res.redirect('/')
 
 });
 
